@@ -2,34 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fun Facts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fun Facts + Live Chat</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-  
 <body>
   <div class="container">
-  <h1>🌟 Fun Facts 🌟</h1>
-  <div id="fact">Click the button to get a fact!</div>
-  <button id="getFactBtn">Get a Fun Fact</button>
 
-<div id="userInfo" style="margin: 20px;"></div>
-<button id="loginBtn">Login with Google</button>
-<button id="logoutBtn" style="display: none;">Logout</button>
+    <h1>🌟 Fun Facts + Live Chat 🌟</h1>
 
+    <!-- User Info and Login -->
+    <div id="userInfo" style="margin: 20px;"></div>
+    <button id="loginBtn">Login with Google</button>
+    <button id="logoutBtn" style="display: none;">Logout</button>
 
-  <h2>💡 Got a Fact?</h2>
-     <form id="factForm" style="display: none;">
-    <input type="text" id="newFact" placeholder="Your fact here" required />
-    <button type="submit">Submit</button>
-  </form>
-</div>
+    <!-- Fun Facts Section -->
+    <section id="fun-facts">
+      <div id="fact">Click the button to get a fact!</div>
+      <button id="getFactBtn">Get a Fun Fact</button>
 
+      <h2>💡 Got a Fact?</h2>
+      <form id="factForm" style="display: none;">
+        <input type="text" id="newFact" placeholder="Your fact here" required />
+        <button type="submit">Submit</button>
+      </form>
+    </section>
 
-<script type="module" src="firebase-init.js"></script>
+    <!-- Live Chat Section -->
+    <section id="chat-container" style="display:none;">
+      <h2>💬 Live Chat</h2>
+      <div id="messages" style="height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;"></div>
+      <form id="messageForm">
+        <input type="text" id="messageInput" placeholder="Type your message" required autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    </section>
 
-<script type="module" src="script.js"></script>
+  </div>
 
+  <script type="module" src="firebase-init.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
-  
 </html>
