@@ -59,7 +59,7 @@ logoutBtn.addEventListener("click", () => {
   signOut(auth);
 });
 
-// Handle login state changes
+// Handle login state changes (unified)
 onAuthStateChanged(auth, (user) => {
   if (user) {
     userInfo.textContent = `👋 Hello, ${user.displayName}`;
@@ -68,6 +68,8 @@ onAuthStateChanged(auth, (user) => {
 
     factForm.style.display = "block";
     chatContainer.style.display = "block";
+
+    loadMessages();
   } else {
     userInfo.textContent = "";
     loginBtn.style.display = "inline-block";
@@ -75,6 +77,8 @@ onAuthStateChanged(auth, (user) => {
 
     factForm.style.display = "none";
     chatContainer.style.display = "none";
+
+    messagesDiv.innerHTML = "";
   }
 });
 
@@ -125,12 +129,3 @@ function loadMessages() {
     messagesDiv.scrollTop = messagesDiv.scrollHeight; // scroll to bottom
   });
 }
-
-// Start listening to chat messages only when user logged in
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    loadMessages();
-  } else {
-    messagesDiv.innerHTML = "";
-  }
-});
