@@ -6,12 +6,24 @@
   <title>Fun Facts</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+  
 <body>
   <div class="container">
-    <h1>🌟 Fun Facts 🌟</h1>
-    <div id="fact">Click the button to reveal a fun fact!</div>
-    <button onclick="showRandomFact()">Get a Fun Fact</button>
-  </div>
-  <script src="script.js"></script>
+  <h1>🌟 Fun Facts 🌟</h1>
+  <div id="fact">Click the button to get a fact!</div>
+  <button id="getFactBtn">Get a Fun Fact</button>
+
+  <h2>💡 Got a Fact?</h2>
+  <form id="factForm">
+    <input type="text" id="newFact" placeholder="Your fact here" required />
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<!-- Add this script tag before your existing <script src="script.js"></script> -->
+<script type="module" src="firebase-init.js"></script>
+<script src="script.js"></script>
+
 </body>
+  
 </html>
