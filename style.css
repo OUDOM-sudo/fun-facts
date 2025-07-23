@@ -1,41 +1,108 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f0f8ff;
-  text-align: center;
-  padding: 50px;
+  font-family: 'Inter', sans-serif;
+  background-color: #1e1e2f;
+  color: #f0f0f5;
+  margin: 0;
+  padding: 20px;
 }
 
 .container {
-  background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  max-width: 600px;
+  max-width: 800px;
   margin: auto;
+  background-color: #2a2a3d;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
 }
 
-#fact {
-  font-size: 1.2em;
-  margin: 20px 0;
+h1, h2 {
+  text-align: center;
+  color: #ffcc70;
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 1em;
+  background-color: #ffcc70;
+  color: #2a2a3d;
+  font-weight: bold;
   border: none;
-  background-color: #4CAF50;
-  color: white;
-  border-radius: 6px;
+  padding: 10px 16px;
+  border-radius: 8px;
   cursor: pointer;
+  margin: 5px 0;
+  transition: background-color 0.2s ease;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #ffb347;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #39394d;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+#fact {
+  background-color: #39394d;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+#messages {
+  background-color: #1a1a28;
+  padding: 20px;
+  border-radius: 12px;
+  height: 400px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  border: 1px solid #333344;
 }
 
 #messages div {
-  padding: 5px;
-  margin-bottom: 5px;
-  border-bottom: 1px solid #ddd;
-  text-align: left;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  background-color: #2e2e45;
+  border-radius: 8px;
+  word-wrap: break-word;
+}
+
+#chat-container form {
+  display: flex;
+  gap: 10px;
+}
+
+#messageInput {
+  flex: 1;
+}
+
+#userInfo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #aaffcc;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  #chat-container form {
+    flex-direction: column;
+  }
 }
